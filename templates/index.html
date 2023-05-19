@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h2>My Todo</h2>
+        <form method="POST" action="/update">
+            {% for todo in todos %}
+            <div>
+                <input type="checkbox" id="{{ todo.id }}" name="{{ todo.title }}" value="{{ todo.id }}"/>
+                <label for="{{ todo.id }}"> {{ todo }} </label>
+            </div>
+            {% endfor %}
+            <br/>
+            <input type="submit" value="Update">
+        </form>
+        <h2>Add Todo</h2>
+        <form method="POST", action="/add_item">
+            <div>
+                <input type="text" name="title" placeholder="Enter your todo..." required>
+            </div>
+            <br/>
+            <input type="submit" value="send">
+        </form>
+    </body>
+</html>
